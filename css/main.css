@@ -1,0 +1,33 @@
+
+
+#book {
+	background:url(../images/book.png) no-repeat;
+	width: 830px;
+	height: 260px;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+}
+
+#pages section {
+	background: url(../images/paper.png) no-repeat;
+	display: block;
+	width: 400px;
+	height: 250px;
+	position: absolute;
+	left: 415px;
+	top: 5px;
+	overflow: hidden;
+}
+	#pages section>div {
+		display: block;
+		width: 400px;
+		height: 250px;
+		font-size: 12px;
+	}
+	
+
+#pageflip-canvas {
+	position: absolute;
+	z-index: 100;
+}
