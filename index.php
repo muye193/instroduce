@@ -24,7 +24,7 @@ if(!isset($_GET['creat'])){
 	}
 else{
 		try
-		{$sql='CREATE TABLE message(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,name TEXT,email TEXT, text TEXT,date DATE NOT NULL)DEFAULT CHARACTER SET utf8 ENGINE=INNODB';
+		{$sql='CREATE TABLE message(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,name TEXT,email TEXT, text TEXT)DEFAULT CHARACTER SET utf8 ENGINE=INNODB';
 		$pdo->exec($sql);
 		include 'succes.php';}
 		catch(PDOException $e){
@@ -34,12 +34,11 @@ else{
 if(isset($_POST['Name'])&& isset($_POST['E-mail']) && isset($_POST['text']))
 {
 	try{
-		$sql='INSET INTO message SET name=:name,email=:email,text=:text,date=:date';
-		$s = $sqo->prepare($sql);
+		$sql='INSERT INTO message SET name=:name,email=:email,text=:text';
+		$s = $pdo->prepare($sql);
 		$s->bindValue(':name',$_POST['Name']);
-		$s->bindValue(':emaal',$_POST['email']);
+		$s->bindValue(':email',$_POST['E-mail']);
 		$s->bindValue(':text',$_POST['text']);
-		$s->bindValue(':date',CURDATE());
 		$s->execute();
 		header('Location:.');
 		exit();
