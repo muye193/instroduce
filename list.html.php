@@ -9,16 +9,8 @@
 	<ul>
     	<?php foreach ($result as $row):?>
         	<li><?php echo htmlspecialchars($row['name'],ENT_QUOTES,'UTF-8')?></li>
-        <?php endforeach;?>
-    </ul>
-    <ul>
-    	<?php foreach ($result as $row):?>
-        	<li><?php echo htmlspecialchars($row['email'],ENT_QUOTES,'UTF-8')?></li>
-        <?php endforeach;?>
-    </ul>
-    <ul>
-    	<?php foreach ($result as $row):?>
-        	<li><?php echo htmlspecialchars($row['text'],ENT_QUOTES,'UTF-8')?></li>
+		<li><?php echo htmlspecialchars($row['email'],ENT_QUOTES,'UTF-8')?></li>
+		<li><?php echo htmlspecialchars($row['text'],ENT_QUOTES,'UTF-8')?></li>
         <?php endforeach;?>
     </ul>
 </div>
